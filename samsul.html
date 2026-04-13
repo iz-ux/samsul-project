@@ -4,105 +4,156 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday 💖</title>
+
 <style>
-body { margin:0; font-family:'Segoe UI'; overflow:hidden; background:linear-gradient(135deg,#ffe6f0,#fff0f5);} 
-.slide{width:100vw;height:100vh;display:none;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:20px}
+body {
+  margin:0;
+  font-family:'Segoe UI';
+  overflow:hidden;
+  background:linear-gradient(135deg,#ffe6f0,#fff0f5);
+}
+
+.slide{
+  width:100vw;
+  height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px
+}
 .active{display:flex}
-h1{color:#ff4d88}
-h2{color:#ff4d88}
-button{margin:8px;padding:10px 18px;border:none;background:#ff4d88;color:#fff;border-radius:10px;cursor:pointer}
+
+h1,h2{color:#ff4d88}
+
+button{
+  margin:8px;
+  padding:10px 18px;
+  border:none;
+  background:#ff4d88;
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer
+}
+
 canvas{background:#111}
-.controls button{font-size:18px}
-.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center}
-.popup-content{background:#fff;padding:25px;border-radius:15px;max-width:320px}
+
+.popup{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.7);
+  display:none;
+  justify-content:center;
+  align-items:center
+}
+
+.popup-content{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  max-width:320px
+}
+
 .album {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .frame {
-  padding: 8px;
-  border-radius: 20px;
-  background: linear-gradient(145deg,#ffb6c1,#ffc0cb);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  padding:8px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffb6c1,#ffc0cb);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
 }
 
 .frame img {
-  width: 120px;
-  height: 120px;
-  border-radius: 15px;
-  object-fit: cover;
+  width:120px;
+  height:120px;
+  border-radius:15px;
+  object-fit:cover;
 }
 
 .frame:hover {
-  transform: scale(1.1) rotate(-2deg);
+  transform:scale(1.1) rotate(-2deg);
 }
 </style>
 </head>
+
 <body>
 
+<!-- MUSIC -->
 <audio id="music" loop>
-  <button id="musicBtn" onclick="toggleMusic()" style="position:fixed;bottom:20px;right:20px;z-index:1000">🎵 Play</button>
   <source src="music/lagu.mp3" type="audio/mp3">
 </audio>
 
+<button id="musicBtn" onclick="toggleMusic()"
+style="position:fixed;bottom:20px;right:20px;z-index:1000">
+🎵 Play
+</button>
+
+<!-- SLIDE 1 -->
 <div class="slide active" id="slide1">
 <button onclick="prevSlide()" style="position:absolute;top:20px;left:20px">⬅️ Back</button>
-<h1>💖Happy Birthday fadhila Sayang💖</h1>
-<h2> 🎉 🎉🎉ciee yang udah berumur 24 🎉 🎉🎉</h2>
+<h1>💖Happy Birthday Fadhila Sayang💖</h1>
+<h2>🎉 ciee yang udah 24 🎉</h2>
 <button onclick="nextSlide()">Lanjut ➡️</button>
 </div>
 
+<!-- SLIDE 2 -->
 <div class="slide" id="slide2">
 <button onclick="prevSlide()" style="position:absolute;top:20px;left:20px">⬅️ Back</button>
 <h1>Doa Untuk Kamu 💫</h1>
-<p>"Selamat bertambah usia, orang baik. Semoga semesta selalu ramah padamu."❤️</p>
+<p>"Semoga semesta selalu ramah padamu ❤️"</p>
 <button onclick="nextSlide()">Lanjut ➡️</button>
 </div>
 
+<!-- SLIDE 3 -->
 <div class="slide" id="slide3">
 <button onclick="prevSlide()" style="position:absolute;top:20px;left:20px">⬅️ Back</button>
 <h1>Kenangan Kita 📸</h1>
 
-<h3>💖 Album Pertama</h3>
+<h3>💖 Album</h3>
 <div class="album">
-  <div class="frame"><img src="foto/foto 1.jpg"></div>
-  <div class="frame"><img src="foto/foto 2.jpg"></div>
+  <div class="frame"><img src="foto/foto1.jpg"></div>
+  <div class="frame"><img src="foto/foto2.jpg"></div>
+  <div class="frame"><img src="foto/foto3.png"></div>
+  <div class="frame"><img src="foto/foto4.png"></div>
 </div>
 
-<h3>🌸 Album Kedua</h3>
-<div class="album">
-  <div class="frame"><img src="foto/foto 3.PNG"></div>
-  <div class="frame"><img src="foto/foto 4.PNG"></div>
-</div>
-
-<p style="margin-top:10px;font-size:0.9em;">ini emang ga seberapa tapi aku ingin kamu mengingat beberapa momen momen ini  💕</p>
+<p style="margin-top:10px;font-size:0.9em;">
+ini emang ga seberapa tapi aku ingin kamu mengingat momen ini 💕
+</p>
 
 <button onclick="nextSlide()">Main Game 🎮</button>
 </div>
 
+<!-- SLIDE 4 GAME -->
 <div class="slide" id="slide4">
 <button onclick="prevSlide()" style="position:absolute;top:20px;left:20px">⬅️ Back</button>
 <h1>Tetris Susah 😏</h1>
 <canvas id="game" width="200" height="400"></canvas>
-<div class="controls">
+
+<div>
 <button onclick="move(-1)">⬅️</button>
 <button onclick="rotate()">🔄</button>
 <button onclick="move(1)">➡️</button>
 </div>
+
 <button onclick="startGame()">Start ▶️</button>
-<button onclick="pauseGame()">Pause ⏸️</button>
+<button onclick="pauseGame(this)">Pause ⏸️</button>
 </div>
 
+<!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-content">
 <p>
 wkwk kalah ya 😆<br><br>
-aku tau kok kamu gabakalan bisa untuk menyelesaikan sendirian 💕<br><br>
-untuk itu ada aku yang akan siap menemanimu di segala situasi 💖
+aku selalu ada buat kamu 💖
 </p>
 <button onclick="startGame()">Coba Lagi 🔁</button>
 </div>
@@ -110,7 +161,7 @@ untuk itu ada aku yang akan siap menemanimu di segala situasi 💖
 
 <script>
 
-
+// MUSIC
 function toggleMusic(){
   const music = document.getElementById('music');
   const btn = document.getElementById('musicBtn');
@@ -124,123 +175,124 @@ function toggleMusic(){
   }
 }
 
+// SLIDE
 let current=1;
-function nextSlide(){document.getElementById('slide'+current).classList.remove('active');current++;document.getElementById('slide'+current).classList.add('active')}
-function prevSlide(){if(current===1)return;document.getElementById('slide'+current).classList.remove('active');current--;document.getElementById('slide'+current).classList.add('active')}
+function nextSlide(){
+  document.getElementById('slide'+current).classList.remove('active');
+  current++;
+  document.getElementById('slide'+current).classList.add('active');
+}
+function prevSlide(){
+  if(current===1)return;
+  document.getElementById('slide'+current).classList.remove('active');
+  current--;
+  document.getElementById('slide'+current).classList.add('active');
+}
 
-window.addEventListener('click',()=>{document.getElementById('music').play()},{once:true});
+// AUTO PLAY SETELAH KLIK
+window.addEventListener('click',()=>{
+  document.getElementById('music').play();
+},{once:true});
 
+// GAME
 const canvas=document.getElementById('game');
 const ctx=canvas.getContext('2d');
 const grid=20,cols=10,rows=20;
-let board,player,dropInterval,gameRunning=false,loseTimer,isPaused=false;
+let board,player,dropInterval,gameRunning=false,isPaused=false;
 
 function reset(){
-board=Array.from({length:rows},()=>Array(cols).fill(0));
-player={x:3,y:0,shape:randomShape()};
+  board=Array.from({length:rows},()=>Array(cols).fill(0));
+  player={x:3,y:0,shape:randomShape()};
 }
 
 function randomShape(){
-// sengaja shape susah
-const shapes=[
-[[1,0,0],[1,1,1]],
-[[0,1,1],[1,1,0]],
-[[1,1,0],[0,1,1]]
-];
-return shapes[Math.floor(Math.random()*shapes.length)];
+  return [
+    [[1,0,0],[1,1,1]],
+    [[0,1,1],[1,1,0]],
+    [[1,1,0],[0,1,1]]
+  ][Math.floor(Math.random()*3)];
 }
 
 function draw(){
-ctx.fillStyle="#111";ctx.fillRect(0,0,200,400);
+  ctx.fillRect(0,0,200,400);
 
-// board
-board.forEach((row,y)=>row.forEach((v,x)=>{
-if(v){ctx.fillStyle="#ff4d88";ctx.fillRect(x*grid,y*grid,grid,grid)}
-}));
+  board.forEach((row,y)=>row.forEach((v,x)=>{
+    if(v) ctx.fillRect(x*grid,y*grid,grid,grid);
+  }));
 
-// player
-player.shape.forEach((r,y)=>r.forEach((v,x)=>{
-if(v){ctx.fillStyle="pink";ctx.fillRect((player.x+x)*grid,(player.y+y)*grid,grid,grid)}
-}));
+  player.shape.forEach((r,y)=>r.forEach((v,x)=>{
+    if(v) ctx.fillRect((player.x+x)*grid,(player.y+y)*grid,grid,grid);
+  }));
 }
 
 function collide(){
-return player.shape.some((r,y)=>r.some((v,x)=>{
-if(!v)return false;
-let nx=player.x+x,ny=player.y+y;
-return ny>=rows||nx<0||nx>=cols||board[ny]&&board[ny][nx];
-}));
+  return player.shape.some((r,y)=>r.some((v,x)=>{
+    if(!v)return false;
+    let nx=player.x+x,ny=player.y+y;
+    return ny>=rows||nx<0||nx>=cols||board[ny]&&board[ny][nx];
+  }));
 }
 
 function merge(){
-player.shape.forEach((r,y)=>r.forEach((v,x)=>{
-if(v) board[player.y+y][player.x+x]=1;
-}));
+  player.shape.forEach((r,y)=>r.forEach((v,x)=>{
+    if(v) board[player.y+y][player.x+x]=1;
+  }));
 }
 
 function update(){
-if(!gameRunning)return;
-player.y++;
-if(collide()){
-player.y--;
-merge();
-player={x:3,y:0,shape:randomShape()};
-if(collide()) endGame();
-}
-draw();
+  if(!gameRunning || isPaused) return;
+
+  player.y++;
+  if(collide()){
+    player.y--;
+    merge();
+    player={x:3,y:0,shape:randomShape()};
+    if(collide()) endGame();
+  }
+  draw();
 }
 
 function startGame(){
-reset();
-clearInterval(dropInterval);
-clearTimeout(loseTimer);
-
-gameRunning=true;
-document.getElementById('popup').style.display='none';
-
-dropInterval=setInterval(update,300); // cepat = susah 😏
-
-// paksa kalah
-loseTimer=setTimeout(endGame,10000);
+  reset();
+  clearInterval(dropInterval);
+  gameRunning=true;
+  isPaused=false;
+  document.getElementById('popup').style.display='none';
+  dropInterval=setInterval(update,300);
 }
 
 function endGame(){
   gameRunning=false;
-  isPaused=true; // hentikan semua aktivitas
   clearInterval(dropInterval);
-  clearTimeout(loseTimer);
   document.getElementById('popup').style.display='flex';
 }
 
-function pauseGame(){
+function pauseGame(btn){
   if(!gameRunning) return;
-  isPaused = !isPaused;
-
-  const btn = event.target;
-  btn.innerText = isPaused ? "Resume ▶️" : "Pause ⏸️";
+  isPaused=!isPaused;
+  btn.innerText=isPaused?"Resume ▶️":"Pause ⏸️";
 }
 
-
 function move(dir){
-if(!gameRunning)return;
-player.x+=dir;
-if(collide())player.x-=dir;
-draw();
+  if(!gameRunning || isPaused) return;
+  player.x+=dir;
+  if(collide()) player.x-=dir;
+  draw();
 }
 
 function rotate(){
-if(!gameRunning)return;
-let newShape=player.shape[0].map((_,i)=>player.shape.map(r=>r[i]).reverse());
-let old=player.shape;
-player.shape=newShape;
-if(collide())player.shape=old;
-draw();
+  if(!gameRunning || isPaused) return;
+  let newShape=player.shape[0].map((_,i)=>player.shape.map(r=>r[i]).reverse());
+  let old=player.shape;
+  player.shape=newShape;
+  if(collide()) player.shape=old;
+  draw();
 }
 
 window.addEventListener('keydown',e=>{
-if(e.key==='ArrowLeft')move(-1);
-if(e.key==='ArrowRight')move(1);
-if(e.key==='ArrowUp')rotate();
+  if(e.key==='ArrowLeft')move(-1);
+  if(e.key==='ArrowRight')move(1);
+  if(e.key==='ArrowUp')rotate();
 });
 
 </script>
