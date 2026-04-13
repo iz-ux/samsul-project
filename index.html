@@ -121,8 +121,8 @@ style="position:fixed;bottom:20px;right:20px;z-index:1000">
 <div class="album">
   <div class="frame"><img src="foto/foto1.jpg"></div>
   <div class="frame"><img src="foto/foto2.jpg"></div>
-  <div class="frame"><img src="foto/foto3.png"></div>
-  <div class="frame"><img src="foto/foto4.png"></div>
+  <div class="frame"><img src="foto/foto3.jpg"></div>
+  <div class="frame"><img src="foto/foto4.jpg"></div>
 </div>
 
 <p style="margin-top:10px;font-size:0.9em;">
@@ -135,7 +135,7 @@ ini emang ga seberapa tapi aku ingin kamu mengingat momen ini 💕
 <!-- SLIDE 4 GAME -->
 <div class="slide" id="slide4">
 <button onclick="prevSlide()" style="position:absolute;top:20px;left:20px">⬅️ Back</button>
-<h1>Tetris Susah 😏</h1>
+<h1>Tetris GAMPANG 😏</h1>
 <canvas id="game" width="200" height="400"></canvas>
 
 <div>
@@ -153,6 +153,7 @@ ini emang ga seberapa tapi aku ingin kamu mengingat momen ini 💕
 <div class="popup-content">
 <p>
 wkwk kalah ya 😆<br><br>
+aku tau kamu ga bisa nyelesein ini sendiri 
 aku selalu ada buat kamu 💖
 </p>
 <button onclick="startGame()">Coba Lagi 🔁</button>
@@ -214,17 +215,26 @@ function randomShape(){
 }
 
 function draw(){
+  // background
+  ctx.fillStyle = "#111";
   ctx.fillRect(0,0,200,400);
 
+  // board
   board.forEach((row,y)=>row.forEach((v,x)=>{
-    if(v) ctx.fillRect(x*grid,y*grid,grid,grid);
+    if(v){
+      ctx.fillStyle="#ff4d88";
+      ctx.fillRect(x*grid,y*grid,grid,grid);
+    }
   }));
 
+  // player
   player.shape.forEach((r,y)=>r.forEach((v,x)=>{
-    if(v) ctx.fillRect((player.x+x)*grid,(player.y+y)*grid,grid,grid);
+    if(v){
+      ctx.fillStyle="pink";
+      ctx.fillRect((player.x+x)*grid,(player.y+y)*grid,grid,grid);
+    }
   }));
 }
-
 function collide(){
   return player.shape.some((r,y)=>r.some((v,x)=>{
     if(!v)return false;
